@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+         <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+         <style type="text/css">
+         p{ font-size: 16px; color:red; margin:0 auto; width:230px;}
+        .s1{  width:100px;  float: left;}
+        .s2{  width:100px;float: right;}
+         </style>
+         <script type="text/javascript">
+    $(function(){
+         $.ajax({
+               url:"http://localhost:3000/qian",
+               type:'POST',
+               success:function(e){
+               var str=""
+                for(var i in e){
+                  str+='<p><span class="s1">'+e[i].title+'</span><span class="s2">'+e[i].content+'</span></p>'
+                }
+                $('div').html(str)
+               }
+            })
+      })
+
+</script>
+    </head>
+    <body>
+    <div></div>
+    </body>
+</html>
